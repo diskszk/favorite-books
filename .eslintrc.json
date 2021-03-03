@@ -1,0 +1,62 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    // "plugin:react-hooks/recommended",
+    // "eslint:recommended",
+    // "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+    // "plugin:prettier/recommended"
+    // "prettier/@typescript-eslint"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+      },
+      "typescript": {
+        "config": "tsconfig.json",
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "semi": "error",
+    "no-unused-vars": "off",
+    "no-irregular-whitespace": ["error", { "skipTemplates": true }],
+    "no-console": "warn",
+    "newline-after-var": "error",
+    "one-var": ["error", "never"],
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-use-before-define": "off",
+    "react/prop-types": "off",
+    "import/extensions": [
+      "off",
+      {
+        "enforceForJSX": true
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "no-undef": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
