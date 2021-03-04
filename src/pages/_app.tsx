@@ -3,10 +3,10 @@ type Props = {
   Component: any;
 };
 
-const App: React.FC<Props> = ({ Component, pageProps }): JSX.Element => {
+const App: React.FC<Props> = ({ Component, pageProps }) => {
   return (
     <>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 };

@@ -1,3 +1,20 @@
-const Hello: React.FC = () => <h1>HelloWorld!</h1>;
+import React from 'react';
+import { css } from '@emotion/react';
 
-export default Hello;
+const hello = css`
+  color: red;
+`;
+
+type Props = {
+  name: string;
+};
+
+export const Hello: React.FC<Props> = (props) => {
+  const { name } = props;
+
+  return (
+    <div>
+      <h1 css={hello}>Hello {name}!</h1>
+    </div>
+  );
+};
