@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { css } from '@emotion/react';
-import { Input, Select } from '../atmos';
+import { Button, Input, Select } from '../atmos';
 import { ISBN_CODE, BOOK_AUTHOR, BOOK_TITLE } from '../../constants';
 import { Value, Label } from '../../types';
 import { Spacer } from '../utils';
@@ -65,7 +65,12 @@ export const SearchArea: React.FC = () => {
         onChange={handleInputTitle}
       />
       <Spacer height={2} />
-      <button>検索する</button>
+      <Button
+        label="検索する"
+        onClick={() => {
+          alert('検索');
+        }}
+      />
       <Spacer height={2} />
       <div>
         {`結果表示 
