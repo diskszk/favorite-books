@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { css } from '@emotion/react';
 import { Button, Input, Select } from '../atmos';
 import { ISBN_CODE, BOOK_AUTHOR, BOOK_TITLE } from '../../constants';
-import { Value, Label } from '../../types';
+import { Value, Label } from '../../lib/types';
 import { Spacer } from '../utils';
 
 const container = css({

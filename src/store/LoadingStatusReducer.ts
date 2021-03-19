@@ -1,35 +1,26 @@
 import { LoadingStatus } from '../lib/types';
 import { initialState } from './initialState';
 
-const FETCH_REQUEST = 'FETCH_REQUEST';
-const SUCCESS_REQUEST = 'SUCCESS_REQUEST';
-const FAIL_REQUEST = 'FAIL_REQUEST';
+const START_LOADING = 'START_LOADING';
+const STOP_LOADING = 'STOP_LOADING';
 
-type FetchRequestAction = {
-  type: typeof FETCH_REQUEST;
+type StartLoadingAction = {
+  type: typeof START_LOADING;
 };
-type SuccessRequestAction = {
-  type: typeof SUCCESS_REQUEST;
-};
-type FailRequestAction = {
-  type: typeof FAIL_REQUEST;
+type StopLoadingAction = {
+  type: typeof STOP_LOADING;
 };
 
-type LoadingStatusActions = FetchRequestAction | SuccessRequestAction | FailRequestAction;
+type LoadingStatusActions = StartLoadingAction | StopLoadingAction;
 
-export const createFetchRequestAction = (): LoadingStatusActions => {
+export const createStartLoading = (): LoadingStatusActions => {
   return {
-    type: FETCH_REQUEST,
+    type: START_LOADING,
   };
 };
-export const createSuccessRequest = (): LoadingStatusActions => {
+export const createStopLoading = (): LoadingStatusActions => {
   return {
-    type: SUCCESS_REQUEST,
-  };
-};
-export const createFailRequestAction = (): LoadingStatusActions => {
-  return {
-    type: FAIL_REQUEST,
+    type: STOP_LOADING,
   };
 };
 
@@ -38,22 +29,16 @@ export const LoadingStatusReducer = (
   action: LoadingStatusActions
 ): LoadingStatus => {
   switch (action.type) {
-    case FETCH_REQUEST:
+    case START_LOADING:
       return {
         ...state,
         isLoading: true,
       };
-    case SUCCESS_REQUEST:
+    case STOP_LOADING:
       return {
         ...state,
         isLoading: false,
       };
-    case FAIL_REQUEST:
-      return {
-        ...state,
-        isLoading: false,
-      };
-
     default:
       return state;
   }

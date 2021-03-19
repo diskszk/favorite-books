@@ -1,10 +1,11 @@
-import { Count, LoadingStatus, ErrorStatus, Message } from '../lib/types';
+import { Count, LoadingStatus, ErrorStatus, Message, ModalStatus } from '../lib/types';
 
 export type RootStore = {
   count: Count;
   loadingStatus: LoadingStatus;
   errorStatus: ErrorStatus;
   message: Message;
+  modalStatus: ModalStatus;
 };
 
 export const initialState: RootStore = {
@@ -17,11 +18,12 @@ export const initialState: RootStore = {
   errorStatus: {
     isError: false,
     message: '',
-    status: 0,
-    isModalOpen: false,
+    status: '',
   },
   message: {
     message: '',
-    isModalOpen: false,
+  },
+  modalStatus: {
+    isOpen: false,
   },
 };

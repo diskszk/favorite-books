@@ -1,8 +1,9 @@
 import React from 'react';
 import { css } from '@emotion/react';
 import { styles } from '../../constants';
-// import { Button } from '../atmos';
-// import { Spacer } from '../utils/Spacer';
+import { useSelector } from 'react-redux';
+import { RootStore } from 'src/store/initialState';
+import { ModalStatus } from 'src/lib/types';
 
 const { color } = styles;
 const background = css({
@@ -36,11 +37,19 @@ const content = css({
 });
 
 export const ModalWrapper: React.FC = ({ children }) => {
+  const { isOpen } = useSelector<RootStore, ModalStatus>((state) => state.modalStatus);
+
   return (
-    <div css={background}>
-      <div css={modal}>
-        <div css={content}>{children}</div>
-      </div>
-    </div>
+    <>
+      {isOpen ? (
+        <div css={background}>
+          <div css={modal}>
+            <div css={content}>{children}</div>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };

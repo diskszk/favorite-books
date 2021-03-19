@@ -1,3 +1,6 @@
+export type Value = 'isbnCode' | 'author' | 'title';
+export type Label = 'ISBNコード' | '著者名' | '書籍名';
+
 export type Count = {
   value: number;
 };
@@ -8,10 +11,11 @@ export type LoadingStatus = {
 export type ErrorStatus = {
   isError: boolean;
   message: string;
-  status: number;
-  isModalOpen: boolean;
+  status: string;
 };
 export type Message = {
   message: string;
-  isModalOpen: boolean;
+};
+export type ModalStatus = {
+  isOpen: boolean;
 };

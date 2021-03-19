@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "test": "npx jest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,6 +27,8 @@
     "@emotion/babel-plugin": "11.0.0",
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.21",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",

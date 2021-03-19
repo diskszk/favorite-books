@@ -1,21 +1,8 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createDecrementAction, createIncrementAction } from 'src/store/CountReducer';
-import { Count, RootStore } from 'src/store/initialState';
-import { css } from '@emotion/react';
-
-const wrapper = css({
-  display: 'flex',
-  flexDirection: 'row',
-  width: 400,
-  margin: '0 auto',
-});
-const button = css({
-  width: 64,
-  height: 28,
-  backgroundColor: 'white',
-  marginRight: 18,
-});
+import { createDecrementAction, createIncrementAction } from '../store/CountReducer';
+import { RootStore } from '../store/initialState';
+import { Count } from '../lib/types';
 
 export const Counter: React.FC = () => {
   const dispatch = useDispatch();
@@ -36,15 +23,13 @@ export const Counter: React.FC = () => {
 
   return (
     <div>
-      <p>count: {value}</p>
-      <div css={wrapper}>
-        <button css={button} onClick={handleClickIncrementButton}>
-          +
-        </button>
-        <button css={button} onClick={handleClickDecrementButton}>
-          -
-        </button>
-      </div>
+      <span>{value}</span>
+      <button data-test="increment-btn" onClick={handleClickIncrementButton}>
+        +
+      </button>
+      <button data-test="decrement-btn" onClick={handleClickDecrementButton}>
+        -
+      </button>
     </div>
   );
 };

@@ -6,16 +6,16 @@ import { LoadingModal, ErrorMessageModal } from '../components/utils';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootStore } from 'src/store/initialState';
 import { LoadingStatus } from 'src/lib/types';
-import { createFetchRequestAction, createSuccessRequest } from 'src/store/LoadingStatusReducer';
+import { createStartLoading, createStopLoading } from 'src/store/LoadingStatusReducer';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
   
   const handleFetch = () => {
-    dispatch(createFetchRequestAction());
+    dispatch(createStartLoading());
   };
   const handleSuccess = () => {
-    dispatch(createSuccessRequest());
+    dispatch(createStopLoading());
   };
 
   return (
