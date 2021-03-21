@@ -20,8 +20,8 @@ export const createDisplayErrorMessageAction = (errorStatus: ErrorStatus): Error
     type: DISPLAY_ERROR_MESSAGE,
     payload: {
       isError: true,
-      message: errorStatus.message,
-      status: errorStatus.status,
+      errorMessage: errorStatus.errorMessage,
+      errorStatus: errorStatus.errorStatus,
     },
   };
 };
@@ -30,8 +30,8 @@ export const createClearErrorAction = (): ErrorStatusActions => {
     type: DISPLAY_ERROR_MESSAGE,
     payload: {
       isError: false,
-      message: '',
-      status: '',
+      errorMessage: '',
+      errorStatus: '',
     },
   };
 };

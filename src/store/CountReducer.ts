@@ -11,7 +11,7 @@ type DecrementAction = {
   type: typeof DECREMENT;
 };
 
-type CountActions = IncrementAction | DecrementAction;
+export type CountActions = IncrementAction | DecrementAction;
 
 export const createIncrementAction = (): CountActions => {
   return {

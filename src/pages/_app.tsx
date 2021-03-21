@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'src/store';
-import { Layout } from 'src/components/common/Layout';
+import { createStore } from '../store';
+import { Layout } from '../components/common/Layout';
 
 type Props = {
   pageProps: any;

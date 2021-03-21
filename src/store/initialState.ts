@@ -17,8 +17,8 @@ export const initialState: RootStore = {
   },
   errorStatus: {
     isError: false,
-    message: '',
-    status: '',
+    errorMessage: '',
+    errorStatus: '',
   },
   message: {
     message: '',

@@ -1,4 +1,4 @@
 export * from './Spacer';
 export * from './LoadingModal';
-export * from './ErrorMessageModal';
+export * from './ErrorModal';
 export * from './MessageModal';

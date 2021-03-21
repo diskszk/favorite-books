@@ -7,15 +7,11 @@ const text = css({
   marginTop: '1.5rem',
 });
 
-type Props = {
-  label: string;
-};
-
-export const LoadingModal: React.FC<Props> = ({ label }) => {
+export const LoadingModal: React.FC = () => {
   return (
     <ModalWrapper>
-      <CircularProgress disableShrink size={100} />
-      <p css={text}>{label}</p>
+      <CircularProgress disableShrink size={64} />
+      <p css={text}>Loading...</p>
     </ModalWrapper>
   );
 };

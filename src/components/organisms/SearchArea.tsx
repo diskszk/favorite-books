@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { Button, Input, Select } from '../atmos';
 import { ISBN_CODE, BOOK_AUTHOR, BOOK_TITLE } from '../../constants';
 import { Value, Label } from '../../lib/types';
-import { Spacer } from '../utils';
+import { Spacer } from '../common';
 
 const container = css({
   padding: '40px 0 40px 0',
@@ -33,7 +33,6 @@ export const SearchArea: React.FC = () => {
         default:
           break;
       }
-      setValue('');
     },
     [setSearchType]
   );
@@ -58,7 +57,7 @@ export const SearchArea: React.FC = () => {
       />
       <Spacer height={2} />
       <Input
-        placeholder={label}
+        placeholder={`${label}を入力してください`}
         required={true}
         type={'text'}
         value={value}
@@ -68,7 +67,7 @@ export const SearchArea: React.FC = () => {
       <Button
         label="検索する"
         onClick={() => {
-          alert('検索');
+          console.log('clicked');
         }}
       />
       <Spacer height={2} />

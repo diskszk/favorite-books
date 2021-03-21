@@ -11,7 +11,7 @@ type CloseModalOption = {
   type: typeof CLOSE_MODAL;
 };
 
-type ModalStatusActions = OpenModalAction | CloseModalOption;
+export type ModalStatusActions = OpenModalAction | CloseModalOption;
 
 export const createOpenModalAction = (): ModalStatusActions => {
   return {

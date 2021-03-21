@@ -10,8 +10,8 @@ export type LoadingStatus = {
 };
 export type ErrorStatus = {
   isError: boolean;
-  message: string;
-  status: string;
+  errorMessage: string;
+  errorStatus: string;
 };
 export type Message = {
   message: string;

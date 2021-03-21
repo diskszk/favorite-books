@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/react';
+import Link from 'next/link';
 
 const header = css({
   height: 64,
@@ -13,7 +14,9 @@ const header = css({
 const title = css({
   lineHeight: '64px',
   fontSize: '24px',
-  color: '#fefefe',
+  a: {
+    color: '#fefefe',
+  },
 });
 
 export const Header: React.FC = () => {
@@ -28,10 +31,10 @@ export const Header: React.FC = () => {
 
   return (
     <header css={header}>
-      <div>
-        <a css={title} href="/">
-          My Favorite Books
-        </a>
+      <div css={title}>
+        {/* <a > */}
+        <Link href="/">My Favorite Books</Link>
+        {/* </a> */}
       </div>
 
       <div>

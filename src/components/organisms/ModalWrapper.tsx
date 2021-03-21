@@ -2,8 +2,8 @@ import React from 'react';
 import { css } from '@emotion/react';
 import { styles } from '../../constants';
 import { useSelector } from 'react-redux';
-import { RootStore } from 'src/store/initialState';
-import { ModalStatus } from 'src/lib/types';
+import { RootStore } from '../../store/initialState';
+import { ModalStatus } from '../../lib/types';
 
 const { color } = styles;
 const background = css({

@@ -5,23 +5,27 @@ import { styles } from '../../constants';
 
 import { useSelector } from 'react-redux';
 import { RootStore } from '../../store/initialState';
-import { LoadingStatus } from '../../lib/types';
+import { ErrorStatus, LoadingStatus, ModalStatus } from '../../lib/types';
 
-import { ErrorMessageModal, LoadingModal, MessageModal } from '../utils';
+import { ErrorModal, LoadingModal } from './';
 import { Header } from '../organisms';
 
 const color = styles.color;
 
-const main = css({
+const wrapper = css({
   width: '80%',
   backgroundColor: color.white,
   margin: '0 auto',
   border: '0px',
-  borderRadius: '0 0 12px 12px',
+  borderRadius: '0 0 8px 8px',
 });
 
 export const Layout: React.FC = ({ children }) => {
+  const { isOpen } = useSelector<RootStore, ModalStatus>((state) => state.modalStatus);
   const { isLoading } = useSelector<RootStore, LoadingStatus>((state) => state.loadingStatus);
+  const { isError, errorMessage } = useSelector<RootStore, ErrorStatus>(
+    (status) => status.errorStatus
+  );
 
   return (
     <>
@@ -45,6 +49,9 @@ export const Layout: React.FC = ({ children }) => {
           a {
             text-decoration: none;
             cursor: pointer;
+            :hover {
+              text-decoration: underline;
+            }
           }
           button {
             cursor: pointer;
@@ -53,12 +60,16 @@ export const Layout: React.FC = ({ children }) => {
       />
       <Header />
 
-      {/* Storeで管理すること */}
-      {/* <ErrorMessageModal errorMessage={'エラーが発生しました。'} />
-      <MessageModal message={'Message'} /> */}
-      {isLoading && <LoadingModal label={'Loading...'} />}
+      {isOpen && (
+        <>
+          {isLoading && <LoadingModal />}
+          {isError && <ErrorModal message={errorMessage} />}
+        </>
+      )}
 
-      <main css={main}>{children}</main>
+      <main>
+        <div css={wrapper}>{children}</div>
+      </main>
       <footer>フッター</footer>
     </>
   );

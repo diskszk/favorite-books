@@ -11,14 +11,14 @@ type StopLoadingAction = {
   type: typeof STOP_LOADING;
 };
 
-type LoadingStatusActions = StartLoadingAction | StopLoadingAction;
+export type LoadingStatusActions = StartLoadingAction | StopLoadingAction;
 
-export const createStartLoading = (): LoadingStatusActions => {
+export const createStartLoadingAction = (): LoadingStatusActions => {
   return {
     type: START_LOADING,
   };
 };
-export const createStopLoading = (): LoadingStatusActions => {
+export const createStopLoadingAction = (): LoadingStatusActions => {
   return {
     type: STOP_LOADING,
   };

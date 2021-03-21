@@ -1,5 +1,5 @@
 import React from 'react';
-import '../setupTest';
+import '../setupTests';
 import { useDispatch, useSelector } from 'react-redux';
 import { shallow } from 'enzyme';
 
@@ -7,7 +7,7 @@ import { ModalStatus } from '../lib/types';
 
 import { ModalWrapper } from '../components/organisms';
 // ErrorMessageModalのテストを追加すること
-import { LoadingModal, MessageModal } from '../components/utils';
+import { LoadingModal, MessageModal } from '../components/common';
 import { createCloseModalAction, createOpenModalAction } from '../store/ModalStatusReducer';
 
 jest.mock('../store/LoadingStatusReducer');

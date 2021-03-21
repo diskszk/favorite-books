@@ -1,4 +1,4 @@
-import '../setupTest';
+import '../setupTests';
 
 // const defaultValues = {
 //   isOpen: false,
