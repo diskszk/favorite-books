@@ -1,5 +1,5 @@
 import React from 'react';
-import { Value, Label } from '../../types';
+import { SearchBookType, Label } from '../../lib/types';
 import { css } from '@emotion/react';
 
 const select = css({
@@ -9,7 +9,7 @@ const select = css({
 
 type Props = {
   onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void;
-  options: { value: Value; label: Label }[];
+  options: { value: SearchBookType; label: Label }[];
   value: string;
 };
 

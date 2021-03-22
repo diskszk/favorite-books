@@ -1,5 +1,5 @@
 export * from './Header';
 // export * from './Footer';
 
-export * from './SearchArea';
+export * from './search/SearchArea';
 export * from './ModalWrapper';

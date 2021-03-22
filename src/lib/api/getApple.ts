@@ -1,6 +1,16 @@
-export const getApple = async (): Promise<string> => {
-  const res = await fetch('http://localhost:8000/api/hello', { method: 'GET' });
-  const data = await res.json();
+import axios from 'axios';
 
-  return data.data;
+type Res = {
+  hoge: string;
+};
+
+export const getApple = async (): Promise<string> => {
+  const url = 'http://localhost:8000/api/hello';
+  const res = await axios.get<Res>(url);
+
+  console.log(res.data.hoge);
+
+  // const data = await res.
+
+  return res.data.hoge;
 };

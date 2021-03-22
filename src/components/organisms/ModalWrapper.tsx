@@ -1,11 +1,12 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import { styles } from '../../constants';
+import { STYLES } from '../../constants';
 import { useSelector } from 'react-redux';
 import { RootStore } from '../../store/initialState';
 import { ModalStatus } from '../../lib/types';
 
-const { color } = styles;
+const { WHITE } = STYLES.COLOR;
+
 const background = css({
   position: 'fixed',
   top: '0%',
@@ -14,6 +15,8 @@ const background = css({
   height: '100%',
   backgroundColor: 'rgba(0,0,0,0.5)',
   display: 'flex',
+  zIndex: 1,
+
   alignItems: 'center',
   justifyContent: 'center',
 });
@@ -27,7 +30,7 @@ const modal = css({
 
   textAlign: 'center',
 
-  backgroundColor: color.white,
+  backgroundColor: WHITE,
   border: '0',
   borderRadius: '1rem',
 });

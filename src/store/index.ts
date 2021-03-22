@@ -6,6 +6,7 @@ import { LoadingStatusReducer } from './LoadingStatusReducer';
 import { ModalStatusReducer } from './ModalStatusReducer';
 import { DisplayMessageReducer } from './DisplayMessageReducer';
 import { ErrorStatusReducer } from './ErrorStatusReducer';
+import { BooksReducer } from './BooksReducer';
 
 export const createStore = (): Store => {
   return reduxCreateStore(
@@ -15,6 +16,8 @@ export const createStore = (): Store => {
       loadingStatus: LoadingStatusReducer,
       displayMessage: DisplayMessageReducer,
       errorStatus: ErrorStatusReducer,
+
+      books: BooksReducer,
     }),
     applyMiddleware(logger)
   );

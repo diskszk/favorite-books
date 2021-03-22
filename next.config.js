@@ -1,11 +1,12 @@
-const path = require("path");
-
 module.exports = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      "~": path.resolve(__dirname, "./src"),
     };
     return config;
+  },
+  images: {
+    // rakutenAPIで取得した画像を使う
+    domains: ['thumbnail.image.rakuten.co.jp'],
   },
 };

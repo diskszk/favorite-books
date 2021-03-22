@@ -1,36 +1,36 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import { styles } from '../../constants';
+import { STYLES } from '../../constants';
 
-const color = styles.color;
+const { OFF_WHITE: GRAY, WHITE, LITE_GREEN: DARK_GREEN } = STYLES.COLOR;
 
 const button = css({
   width: '8rem',
   height: '3rem',
   backgroundColor: 'lightgreen',
-  border: `1px solid ${color.gray}`,
+  border: `1px solid ${GRAY}`,
   borderRadius: '0.8rem',
   transition: 'all 0.25s ease',
 
   fontWeight: 'bolder',
   fontSize: '1rem',
-  color: color.white,
+  color: WHITE,
 
   ':disabled': {
     cursor: 'default',
-    backgroundColor: color.gray,
+    backgroundColor: GRAY,
     ':hover': {
-      backgroundColor: color.gray,
+      backgroundColor: GRAY,
     },
   },
 
   '&:hover': {
-    backgroundColor: color.darkGreen,
+    backgroundColor: DARK_GREEN,
   },
 });
 
-type Props = {
-  disabled?: boolean;
+export type Props = {
+  disabled?: boolean; // trueの場合押せない
   label: string;
   onClick: (_ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };

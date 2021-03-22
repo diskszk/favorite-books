@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/react';
 import Link from 'next/link';
+import { STYLES } from '../../constants';
 
-const header = css({
-  height: 64,
-  backgroundColor: 'lightgreen',
+const header = css`
+  height: 4rem;
+  background-color: lightgreen;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8rem;
 
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '0 32px',
-});
+  @media screen and (max-width: ${STYLES.DEVICES.SP}) {
+    padding: 0 0.5rem;
+  }
+`;
 
-const title = css({
-  lineHeight: '64px',
-  fontSize: '24px',
-  a: {
-    color: '#fefefe',
-  },
-});
+const title = css`
+  line-height: 4rem;
+  font-weight: bold;
+  a {
+    color: #fefefe;
+    text-decoration: none;
+
+    :visited {
+      color: #fefefe;
+    }
+  }
+`;
 
 export const Header: React.FC = () => {
   const [isSignin, setIsSignin] = useState(false);
@@ -32,9 +41,7 @@ export const Header: React.FC = () => {
   return (
     <header css={header}>
       <div css={title}>
-        {/* <a > */}
         <Link href="/">My Favorite Books</Link>
-        {/* </a> */}
       </div>
 
       <div>
