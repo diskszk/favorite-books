@@ -1,4 +1,4 @@
-import { Count, LoadingStatus, ErrorStatus, Message, ModalStatus } from '../lib/types';
+import { Count, LoadingStatus, ErrorStatus, Message, ModalStatus, Book } from '../lib/types';
 
 export type RootStore = {
   count: Count;
@@ -6,6 +6,7 @@ export type RootStore = {
   errorStatus: ErrorStatus;
   message: Message;
   modalStatus: ModalStatus;
+  books: Book[];
 };
 
 export const initialState: RootStore = {
@@ -26,4 +27,5 @@ export const initialState: RootStore = {
   modalStatus: {
     isOpen: false,
   },
+  books: null,
 };

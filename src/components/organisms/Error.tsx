@@ -5,7 +5,7 @@ import { searchBooks } from '../../lib/api/rakutenBooks';
 import { Book } from '../../lib/types';
 import { createDisplayErrorMessageAction } from '../../store/ErrorStatusReducer';
 import { createCloseModalAction, createOpenModalAction } from '../../store/ModalStatusReducer';
-import { PostCard } from '../molecules';
+import { BookCard } from '../molecules';
 import {
   createStartLoadingAction,
   createStopLoadingAction,
@@ -62,7 +62,7 @@ const Error: React.FC = () => {
           const item = book.Item;
 
           return (
-            <PostCard
+            <BookCard
               key={key}
               author={item.author}
               title={item.title}

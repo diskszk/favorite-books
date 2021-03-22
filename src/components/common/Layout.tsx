@@ -40,12 +40,12 @@ export const Layout: React.FC = ({ children }) => {
             box-sizing: border-box;
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
-            font-smoothing: antialiased;
+            -font-smoothing: antialiased;
           }
           body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic   ProN', 'Hiragino Sans',
-              Meiryo, sans-serif;
-            font-size: 20px;
+              'Meiryo', sans-serif;
+            font-size: 16px;
             font-weight: normal;
             background-color: #e4e4e4;
             white-space: pre-line;

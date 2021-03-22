@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Button, Input, Select } from '../../atmos';
-import { Label, SearchBookType, Book } from '../../../lib/types';
+import { Label, SearchBookType } from '../../../lib/types';
 import { createDisplayErrorMessageAction } from '../../../store/ErrorStatusReducer';
 import { createCloseModalAction, createOpenModalAction } from '../../../store/ModalStatusReducer';
 import {
@@ -10,6 +10,7 @@ import {
 import { searchBooks } from '../../../lib/api/rakutenBooks';
 import { Space } from '../../common';
 import { useDispatch } from 'react-redux';
+import { createUpdateBooksAction } from '../../../store/BooksReducer';
 
 const TITLE: SearchBookType = 'title' as const;
 const AUTHOR: SearchBookType = 'author' as const;
@@ -22,7 +23,6 @@ export const SearchArea: React.FC = () => {
   const [label, setLabel] = useState<Label>('書籍名');
   const [value, setValue] = useState('');
   const [isDisabled, setDisables] = useState(true);
-  const [books, setBooks] = useState<Book[]>([]);
 
   const handleChangeSearchType = useCallback((ev: React.ChangeEvent<HTMLSelectElement>): void => {
     switch (ev.target.value) {
@@ -59,7 +59,8 @@ export const SearchArea: React.FC = () => {
         dispatch(createOpenModalAction());
         const books = await searchBooks(searchType, value);
 
-        setBooks(books);
+        dispatch(createUpdateBooksAction(books));
+
         dispatch(createCloseModalAction());
         dispatch(createStopLoadingAction());
       } catch (err) {

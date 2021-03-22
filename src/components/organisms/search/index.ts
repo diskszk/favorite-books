@@ -1,2 +1,2 @@
 export * from './SearchArea';
-export * from './SearchResult';
+export * from './BookList';

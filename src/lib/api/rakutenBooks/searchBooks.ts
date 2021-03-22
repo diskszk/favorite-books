@@ -19,8 +19,14 @@ export async function searchBooks(type: SearchBookType, value: string): Promise<
   try {
     const res = await axios.get<SearchBookData>(url);
 
+    if (res.data.hits === 0) {
+      return [];
+    }
+
     return res.data.Items;
   } catch (err) {
+    console.log('error!!');
+
     return [];
   }
 }
