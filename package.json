@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "test": "npx jest",
-    "out": "next export",
+    "out": "next export"
   },
   "eslintConfig": {
     "extends": "react-app"
