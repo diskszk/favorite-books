@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { css } from '@emotion/react';
 import Link from 'next/link';
 import { STYLES } from '../../constants';
 
 const header = css`
-  height: 4rem;
+  height: 64px;
   background-color: lightgreen;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@ const header = css`
 `;
 
 const title = css`
-  line-height: 4rem;
+  line-height: 64px;
   font-weight: bold;
   a {
     color: #fefefe;
@@ -29,22 +29,13 @@ const title = css`
 `;
 
 export const Header: React.FC = () => {
-  const [isSignin, setIsSignin] = useState(false);
-
-  function handleSignin() {
-    setIsSignin(true);
-  }
-  function handleSignout() {
-    setIsSignin(false);
-  }
-
   return (
     <header css={header}>
       <div css={title}>
         <Link href="/">My Favorite Books</Link>
       </div>
 
-      <div>
+      {/* <div>
         {isSignin ? (
           <div>
             <img src="#" alt={'アイコン'} />
@@ -57,7 +48,7 @@ export const Header: React.FC = () => {
             <button onClick={handleSignout}>sign up</button>
           </div>
         )}
-      </div>
+      </div> */}
     </header>
   );
 };

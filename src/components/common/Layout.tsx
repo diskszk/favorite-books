@@ -8,16 +8,16 @@ import { RootStore } from '../../store/initialState';
 import { ErrorStatus, LoadingStatus, ModalStatus } from '../../lib/types';
 
 import { ErrorModal, LoadingModal } from './';
-import { Header } from '../organisms';
+import { Header, Footer } from '../organisms';
 
 const { WHITE } = STYLES.COLOR;
 
 const wrapper = css`
+  min-height: calc(100vh - 64px - 80px);
   width: 80%;
   background-color: ${WHITE};
   margin: 0 auto;
   border: 0px;
-  border-radius: 0 0 8px 8px;
 
   @media screen and (max-width: ${STYLES.DEVICES.SP}) {
     width: 100%;
@@ -74,7 +74,7 @@ export const Layout: React.FC = ({ children }) => {
       <main>
         <div css={wrapper}>{children}</div>
       </main>
-      <footer>フッター</footer>
+      <Footer />
     </>
   );
 };
